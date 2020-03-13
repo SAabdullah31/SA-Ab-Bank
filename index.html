@@ -72,16 +72,25 @@
         const depositeBtn =document.getElementById("addDeposite");
         depositeBtn.addEventListener("click",function(){
             const depositeNumber=getInputNumber("depositeAmount");
+            if(depositeNumber<0){
+                alert("Deposite number cannot be negative");
+            }
+            else{
+                document.getElementById("depositeAmount").value="";
 
-            //const currentDeposite =document.getElementById("currentDeposite").innerText;
+            updateSpanText("currentDeposite",depositeNumber);
+           updateSpanText("currentBalance",depositeNumber);
+            }
+
+            //const  =document.getElementById("currentDeposite").innerText;
             //const currentDepositeNumber =parseFloat(currentDeposite);
             //const totalDeposite =depositeNumber +currentDepositeNumber;
             //document.getElementById("currentDeposite").innerText=totalDeposite;
             
-            document.getElementById("depositeAmount").value="";
+            //document.getElementById("depositeAmount").value="";
 
-            updateSpanText("currentDeposite",depositeNumber);
-           updateSpanText("currentBalance",depositeNumber);
+           // updateSpanText("currentDeposite",depositeNumber);
+           //updateSpanText("currentBalance",depositeNumber);
 
         })
         //withdraw button event handler
